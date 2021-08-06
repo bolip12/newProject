@@ -51,9 +51,40 @@ class HomeScreen extends Component {
           </View>
           <Divider/>
 
+
+          <View style={{ flexDirection:'row', justifyContent: 'space-around'}}> 
+              <IconButton
+                icon="account"
+                size={30}
+                onPress={() => console.log('Pressed')}
+              />     
+
+              <IconButton
+                icon="account"
+                size={30}
+                onPress={() => console.log('Pressed')}
+              />      
+
+              <IconButton
+                icon="account"
+                size={30}
+                onPress={() => console.log('Pressed')}
+              />              
+
+              <IconButton
+                icon="account"
+                size={30}
+                onPress={() => console.log('Pressed')}
+              />      
+          </View>
+
+            
+
           </ScrollView>
 
           <Loading isLoading={this.state.isLoading} />
+
+
         </PaperProvider>
       )
   }
