@@ -33,11 +33,16 @@ class AnggotaInsertScreen extends ValidationComponent {
   }
 
 
-  async onRegister() {
-    
-    this.props.navigation.navigate('LoginScreen');                       
-  
-  }
+ async onSubmit() {
+
+      this.props.navigation.navigate('AnggotaListScreen')
+
+      showMessage({
+        message: "Data berhasil disimpan",
+        type: 'success',
+        icon: 'success',
+      });
+    }
 
   render() {
       return (
@@ -68,7 +73,7 @@ class AnggotaInsertScreen extends ValidationComponent {
           <Button
               mode="contained"
               icon="content-save"
-              onPress={() => this.onRegister()}
+              onPress={() => this.onSubmit()}
               style={styleApp.Button}
           >
             Simpan

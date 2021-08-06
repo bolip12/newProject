@@ -13,7 +13,7 @@ import storeApp from '../../../config/storeApp';
 import styleApp from '../../../config/styleApp';
 import Loading from '../../../component/Loading';
 
-class PembayaranInsertScreen extends ValidationComponent {
+class PembayaranUpdateScreen extends ValidationComponent {
 
   constructor(props) {
       super(props);
@@ -51,7 +51,7 @@ class PembayaranInsertScreen extends ValidationComponent {
         <PaperProvider theme={Theme}>
           <Appbar.Header>
             <Appbar.BackAction onPress={() => this.props.navigation.goBack()} />
-            <Appbar.Content title="Insert Pembayaran" />
+            <Appbar.Content title="Update Pembayaran" />
           </Appbar.Header>
 
           <ScrollView style={styleApp.ScrollView}>
@@ -63,7 +63,7 @@ class PembayaranInsertScreen extends ValidationComponent {
               style={{margin:10}}
               mode='dropdown'
             >
-              <Picker.Item label="Pilih Bank" value="" />
+              
               <Picker.Item key={1} label='BCA' value='BCA' />
               <Picker.Item key={2} label='Mandiri' value='Mandiri' />
               <Picker.Item key={3} label='BNI' value='BNI' />
@@ -72,7 +72,7 @@ class PembayaranInsertScreen extends ValidationComponent {
 
             <TextInput
               label="Nominal"
-              value={this.state.nominal}
+              value="2,000,000"
               onChangeText={text => this.setState({nominal:text})}
               keyboardType="numeric"
               style={styleApp.TextInput}
@@ -104,4 +104,4 @@ class PembayaranInsertScreen extends ValidationComponent {
   }
 }
 
-export default PembayaranInsertScreen;
+export default PembayaranUpdateScreen;

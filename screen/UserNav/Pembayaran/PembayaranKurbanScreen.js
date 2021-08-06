@@ -47,7 +47,7 @@ class PemabayaranKurbanScreen extends Component {
               description="2,000,000"
               left={() => <Badge style={{ backgroundColor: Theme.colors.primary, margin: 10 }} size={40}>B</Badge>}
               right={() => <Subheading style={styleApp.Subheading}>05 Ags 2021</Subheading>}
-              onPress={() => this.props.navigation.navigate('PemabayaranKurbanScreen')}
+              onPress={() => this.props.navigation.navigate('PembayaranUpdateScreen')}
             />
             <Divider />
 

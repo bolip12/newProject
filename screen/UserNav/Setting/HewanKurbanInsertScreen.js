@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { View, Alert, ScrollView } from 'react-native';
-import { Provider as PaperProvider, Text, Appbar, Button, TextInput, Portal, Modal, HelperText, Divider } from 'react-native-paper';
+import { Provider as PaperProvider, Text, Appbar, Button, TextInput, Portal, Modal, HelperText, Divider, Subheading } from 'react-native-paper';
 import { showMessage } from "react-native-flash-message";
 import { Picker } from '@react-native-picker/picker';
 import ValidationComponent from 'react-native-form-validator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import DateTimeInput from '../../../component/dateTimeInput';
 import supabase from '../../../config/supabase';
 import Theme from '../../../config/Theme';
 import storeApp from '../../../config/storeApp';
 import styleApp from '../../../config/styleApp';
 import Loading from '../../../component/Loading';
 
-class PembayaranInsertScreen extends ValidationComponent {
+class HewanKurbanInsertScreen extends ValidationComponent {
 
   constructor(props) {
       super(props);
@@ -28,7 +27,6 @@ class PembayaranInsertScreen extends ValidationComponent {
       this.state = {
         ...this.state,
         
-        tanggal: new Date(),
       };
   }
 
@@ -36,7 +34,7 @@ class PembayaranInsertScreen extends ValidationComponent {
   //memanggil api untuk menyimpan data
   async onSubmit() {
 
-      this.props.navigation.navigate('PembayaranKurbanScreen')
+      this.props.navigation.navigate('HewanKurbanScreen')
 
       showMessage({
         message: "Data berhasil disimpan",
@@ -51,40 +49,48 @@ class PembayaranInsertScreen extends ValidationComponent {
         <PaperProvider theme={Theme}>
           <Appbar.Header>
             <Appbar.BackAction onPress={() => this.props.navigation.goBack()} />
-            <Appbar.Content title="Insert Pembayaran" />
+            <Appbar.Content title="Insert Hewan Kurban" />
           </Appbar.Header>
 
           <ScrollView style={styleApp.ScrollView}>
 
-            <HelperText style={{marginHorizontal:10, marginTop:10}}>Bank</HelperText>
+            <HelperText style={{marginHorizontal:10, marginTop:10}}>Jenis</HelperText>
             <Picker
-              selectedValue={this.state.bank}
-              onValueChange={(itemValue, itemIndex) => this.setState({bank:itemValue})}
+              selectedValue={this.state.jenis}
+              onValueChange={(itemValue, itemIndex) => this.setState({jenis:itemValue})}
               style={{margin:10}}
               mode='dropdown'
             >
-              <Picker.Item label="Pilih Bank" value="" />
-              <Picker.Item key={1} label='BCA' value='BCA' />
-              <Picker.Item key={2} label='Mandiri' value='Mandiri' />
-              <Picker.Item key={3} label='BNI' value='BNI' />
+              <Picker.Item label="Pilih Jenis " value="" />
+              <Picker.Item key={1} label='Domba' value='Domba' />
+              <Picker.Item key={2} label='Sapi' value='Sapi' />
             </Picker>
             <Divider style={{ marginHorizontal: 10 }} />
 
             <TextInput
-              label="Nominal"
-              value={this.state.nominal}
-              onChangeText={text => this.setState({nominal:text})}
+              label="Nama"
+              value={this.state.nama}
+              onChangeText={text => this.setState({nama:text})}
+              style={styleApp.TextInput}
+            />
+
+            <TextInput
+              label="Berat"
+              value={this.state.berat}
+              right={<TextInput.Affix text="Kg" />}
+              onChangeText={text => this.setState({berat:text})}
               keyboardType="numeric"
               style={styleApp.TextInput}
             />
 
-            <DateTimeInput
-              title="Tanggal Bayar"
-              value={this.state.tanggal}
-              mode="date"
-              onChangeDate={(date) => this.setState({tanggal:date})}
+            <TextInput
+              label="Harga"
+              value={this.state.harga}
+              onChangeText={text => this.setState({harga:text})}
+              keyboardType="numeric"
+              style={styleApp.TextInput}
             />
-            <Divider style={{ backgroundColor: 'grey', marginHorizontal: 10 }}/>
+
 
           </ScrollView>
 
@@ -104,4 +110,4 @@ class PembayaranInsertScreen extends ValidationComponent {
   }
 }
 
-export default PembayaranInsertScreen;
+export default HewanKurbanInsertScreen;

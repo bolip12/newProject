@@ -16,6 +16,8 @@ import Theme from '../config/Theme';
 
 //screens
 import HomeScreen from '../screen/UserNav/HomeScreen';
+import PesanScreen from '../screen/UserNav/PesanScreen';
+
 import AnggotaListScreen from '../screen/UserNav/Anggota/AnggotaListScreen';
 import AnggotaInsertScreen from '../screen/UserNav/Anggota/AnggotaInsertScreen';
 
@@ -25,7 +27,12 @@ import KurbanDetailScreen from '../screen/UserNav/Kurban/KurbanDetailScreen';
 import PembayaranListScreen from '../screen/UserNav/Pembayaran/PembayaranListScreen';
 import PembayaranKurbanScreen from '../screen/UserNav/Pembayaran/PembayaranKurbanScreen';
 import PembayaranInsertScreen from '../screen/UserNav/Pembayaran/PembayaranInsertScreen';
+import PembayaranUpdateScreen from '../screen/UserNav/Pembayaran/PembayaranUpdateScreen';
 
+import SettingScreen from '../screen/UserNav/Setting/SettingScreen';
+import ProfilScreen from '../screen/UserNav/Setting/ProfilScreen';
+import HewanKurbanScreen from '../screen/UserNav/Setting/HewanKurbanScreen';
+import HewanKurbanInsertScreen from '../screen/UserNav/Setting/HewanKurbanInsertScreen';
 
 
 export default function UserNav() {
@@ -42,12 +49,25 @@ export default function UserNav() {
 	        {/*tab anggota dengan stack list, insert & update*/}
 	       	<BottomTab.Screen
 						name="Home"
-						component={HomeScreen}
 						options={{
 							tabBarLabel: 'Home',
 							tabBarIcon: ({color}) => (<MaterialCommunityIcons name="home" color={color} size={25} />)
 						}}
-					/>
+					>
+					{() => (<Stack.Navigator>
+			                <Stack.Screen
+			                  name="HomeScreen"
+			                  component={HomeScreen}
+			                  options={{headerShown:false}}
+			                />
+			                <Stack.Screen
+			                  name="PesanScreen"
+			                  component={PesanScreen}
+			                  options={{headerShown:false}}
+			                />
+										</Stack.Navigator>
+					)}
+         	</BottomTab.Screen>
 
 	        
 	        <BottomTab.Screen
@@ -117,6 +137,11 @@ export default function UserNav() {
 			                  component={PembayaranInsertScreen}
 			                  options={{headerShown:false}}
 			                />
+			                <Stack.Screen
+			                  name="PembayaranUpdateScreen"
+			                  component={PembayaranUpdateScreen}
+			                  options={{headerShown:false}}
+			                />
 			                
 										</Stack.Navigator>
 					)}
@@ -135,6 +160,22 @@ export default function UserNav() {
 			                  component={SettingScreen}
 			                  options={{headerShown:false}}
 			                />
+			                <Stack.Screen
+			                  name="ProfilScreen"
+			                  component={ProfilScreen}
+			                  options={{headerShown:false}}
+			                />
+			                <Stack.Screen
+			                  name="HewanKurbanScreen"
+			                  component={HewanKurbanScreen}
+			                  options={{headerShown:false}}
+			                />
+			                <Stack.Screen
+			                  name="HewanKurbanInsertScreen"
+			                  component={HewanKurbanInsertScreen}
+			                  options={{headerShown:false}}
+			                />
+			                
 			                
 										</Stack.Navigator>
 					)}

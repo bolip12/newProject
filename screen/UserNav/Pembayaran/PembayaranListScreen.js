@@ -45,7 +45,7 @@ class PembayaranListScreen extends Component {
               title="Domba 1" 
               titleStyle={{fontWeight:'bold'}}
               description="Rp. 6,000,000"
-              left={() => <Avatar.Icon size={35} icon="sheep" style={{ margin:5 }} />}
+              left={() => <Avatar.Icon size={35} icon="sheep" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
               right={() => <IconButton icon='arrow-right' />}
               onPress={() => this.props.navigation.navigate('PembayaranKurbanScreen')}
             />

@@ -45,7 +45,7 @@ class KurbanListScreen extends Component {
               title="Domba 1" 
               titleStyle={{fontWeight:'bold'}}
               description="Rp. 3,000,000"
-              left={() => <Avatar.Icon size={35} icon="sheep" style={{ margin:5 }} />}
+              left={() => <Avatar.Icon size={35} icon="sheep" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
               right={() => 
                 <InputSpinner
                   value={this.state.value}
@@ -72,7 +72,7 @@ class KurbanListScreen extends Component {
               title="Domba 2" 
               titleStyle={{fontWeight:'bold'}}
               description="Rp. 3,200,000"
-              left={() => <Avatar.Icon size={35} icon="sheep" style={{ margin:5 }} />}
+              left={() => <Avatar.Icon size={35} icon="sheep" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
               right={() => 
                 <InputSpinner
                   value={this.state.value2}
@@ -99,7 +99,61 @@ class KurbanListScreen extends Component {
               title="Domba 3" 
               titleStyle={{fontWeight:'bold'}}
               description="Rp. 3,500,000"
-              left={() => <Avatar.Icon size={35} icon="sheep" style={{ margin:5 }} />}
+              left={() => <Avatar.Icon size={35} icon="sheep" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
+              right={() => 
+                <InputSpinner
+                  value={this.state.value3}
+                  min={0}
+                  max={10}
+                  type="float"
+                  step={1}
+                  onChange={(value) => this.setState({value3: value})}
+                  width={135}
+                  height={40}
+                  buttonFontSize={20}
+                  buttonStyle={{ backgroundColor: '#ffffff' }}
+                  inputStyle={{ fontSize:16, color:Theme.colors.primary}}
+                  style={{ borderColor:Theme.colors.primary, borderWidth:1, height:45}}
+                  buttonTextColor={Theme.colors.primary}
+                  selectionColor={Theme.colors.primary}
+                  colorPress={Theme.colors.primary}
+                  buttonPressTextColor={'#ffffff'}
+                /> }
+            />
+            <Divider />
+
+            <List.Item 
+              title="Sapi 1" 
+              titleStyle={{fontWeight:'bold'}}
+              description="Rp. 13,000,000"
+              left={() => <Avatar.Icon size={35} icon="cow" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
+              right={() => 
+                <InputSpinner
+                  value={this.state.value3}
+                  min={0}
+                  max={10}
+                  type="float"
+                  step={1}
+                  onChange={(value) => this.setState({value3: value})}
+                  width={135}
+                  height={40}
+                  buttonFontSize={20}
+                  buttonStyle={{ backgroundColor: '#ffffff' }}
+                  inputStyle={{ fontSize:16, color:Theme.colors.primary}}
+                  style={{ borderColor:Theme.colors.primary, borderWidth:1, height:45}}
+                  buttonTextColor={Theme.colors.primary}
+                  selectionColor={Theme.colors.primary}
+                  colorPress={Theme.colors.primary}
+                  buttonPressTextColor={'#ffffff'}
+                /> }
+            />
+            <Divider />
+
+            <List.Item 
+              title="Sapi 2" 
+              titleStyle={{fontWeight:'bold'}}
+              description="Rp. 15,000,000"
+              left={() => <Avatar.Icon size={35} icon="cow" color="green" style={{ backgroundColor:'white', borderColor:Theme.colors.primary, borderWidth:1, color:Theme.colors.primary, margin:5}} />}
               right={() => 
                 <InputSpinner
                   value={this.state.value3}
